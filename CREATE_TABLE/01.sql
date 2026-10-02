@@ -4,19 +4,19 @@ CREATE TABLE `grupo` (
     `grauimportancia` int
 );
 
-CREATE TABLE `contato`(
+CREATE TABLE `contato` (
     `id` int PRIMARY KEY,
-    `ocupacao` varchar (100),
-    `endereco` varchar (150),
-    `email` varchar (50),
+    `ocupacao` varchar(100),
+    `endereco` varchar(150),
+    `email` varchar(50),
     `idgrupo` int,
-    FOREIGN KEY (idgrupo) REFERENCES grupo(id)
+    FOREIGN KEY (`idgrupo`) REFERENCES `grupo`(`id`)
 );
 
-CREATE TABLE `telefone`(
+CREATE TABLE `telefone` (
     `id` int PRIMARY KEY,
-    `rotulo` int,
-    `numero`int,
-    `idcontato`int,
-    FOREIGN KEY (idcontato) REFERENCES contato(id)
+    `rotulo` varchar(50),
+    `numero` varchar(20),
+    `idcontato` int,
+    FOREIGN KEY (`idcontato`) REFERENCES `contato`(`id`)
 );

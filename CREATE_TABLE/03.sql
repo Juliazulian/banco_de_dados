@@ -11,19 +11,20 @@ CREATE TABLE `trabalho`(
     `arquivo`varchar,
     `dataentrega` DATE,
     `nota` FLOAT,
-    `ididsciplina` int,
-    FOREIGN KEY (`ididsciplina`) REFERENCES `disciplina`(`id`)
+    `iddisciplina` int,
+    FOREIGN KEY (`iddisciplina`) REFERENCES `disciplina`(`id`)
 );
 
-CREATE TABLE `autor`(
-    `matricula`int PRIMARY KEY,
-    `nome`char (100),
-    `email` char(100),
+CREATE TABLE `autor` (
+    `matricula` int PRIMARY KEY,
+    `nome` varchar(100),
+    `email` varchar(100)
 );
 
-CREATE TABLE `trabalhocantor`(
-    `idtrabalho`int,
-    `matriculaautor`int,
-    FOREIGN KEY (`idtrabalho`) REFERENCES `trabalho`(`id`)
-    FOREIGN KEY (`matriculaautor`) REFERENCES `cantor`(`matricula`)
+CREATE TABLE `trabalhoautor` (
+    `idtrabalho` int,
+    `matriculaautor` int,
+    PRIMARY KEY (`idtrabalho`, `matriculaautor`),
+    FOREIGN KEY (`idtrabalho`) REFERENCES `trabalho`(`id`),
+    FOREIGN KEY (`matriculaautor`) REFERENCES `autor`(`matricula`)
 );
