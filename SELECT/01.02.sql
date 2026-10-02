@@ -60,8 +60,8 @@ ORDER BY `especie` ASC, `nome` ASC;
 
 -- 13
 SELECT * FROM `Animais` 
-ORDER BY `idAnimal` LIMIT 5,0;
+ORDER BY `idAnimal` LIMIT 5;
 
 -- 14
 SELECT * FROM `Consultas`
-ORDER BY `idConsultas` LIMIT 3;
+ORDER BY `idConsulta` LIMIT 3;
